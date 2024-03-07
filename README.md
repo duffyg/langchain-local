@@ -24,7 +24,7 @@ Medium Article: https://medium.com/@allenchun/feed-local-data-to-llm-using-langc
 ```
 $ node index.js "Describe this applicant's employment history"
 {
-  text: ' This applicant has 5+ years of experience in IT, with experience in System Administration, Network Configuration, Software Installation, Troubleshooting, Windows Environment, Customer Service, and Technical Support. They worked as a Senior IT Specialist at XYZ Global from 2018-Present, an IT Support Specialist at Zero Web from 2015-2017, and a Junior Desktop Support Engineer at Calumcoro Medical from 2014-2015.'
+    text: ' This applicant has 5+ years of experience in IT, with experience in System Administration, Network Configuration, Software Installation, Troubleshooting, Windows Environment, Customer Service, and Technical Support. They worked as a Senior IT Specialist at XYZ Global from 2018-Present, an IT Support Specialist at Zero Web from 2015-2017, and a Junior Desktop Support Engineer at Calumcoro Medical from 2014-2015.'
 }
 ```
 - Asking questions not related to the document
@@ -36,7 +36,7 @@ $ node index.js "What is 1+1?"
 ### What if we want to reference Langchain using our local data and OpenAI LLM
 ```
 const chain = new RetrievalQAChain({
-  combineDocumentsChain: loadQARefineChain(model),
-  retriever: vectorStore.asRetriever(),
+    combineDocumentsChain: loadQARefineChain(model),
+    retriever: vectorStore.asRetriever(),
 });
 ```

@@ -1,0 +1,176 @@
+[32mINFO[0m:     [19-02-2024 21:29:21] Set chroma_server_nofile to 65535
+[32mINFO[0m:     [19-02-2024 21:29:21] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component System
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component SqliteDB
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component Posthog
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-02-2024 21:29:21] Starting component SegmentAPI
+[32mINFO[0m:     [19-02-2024 21:29:21] Started server process [[36m16350[0m]
+[32mINFO[0m:     [19-02-2024 21:29:21] Waiting for application startup.
+[32mINFO[0m:     [19-02-2024 21:29:21] Application startup complete.
+[32mINFO[0m:     [19-02-2024 21:29:21] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-02-2024 21:31:02] Shutting down
+[32mINFO[0m:     [19-02-2024 21:31:02] Waiting for application shutdown.
+[32mINFO[0m:     [19-02-2024 21:31:02] Application shutdown complete.
+[32mINFO[0m:     [19-02-2024 21:31:02] Finished server process [[36m16350[0m]
+[32mINFO[0m:     [19-02-2024 21:40:40] Set chroma_server_nofile to 65535
+[32mINFO[0m:     [19-02-2024 21:40:40] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component System
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component SqliteDB
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component Posthog
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-02-2024 21:40:40] Starting component SegmentAPI
+[32mINFO[0m:     [19-02-2024 21:40:40] Started server process [[36m16692[0m]
+[32mINFO[0m:     [19-02-2024 21:40:40] Waiting for application startup.
+[32mINFO[0m:     [19-02-2024 21:40:40] Application startup complete.
+[32mINFO[0m:     [19-02-2024 21:40:40] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-02-2024 21:40:49] ::1:50287 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [19-02-2024 21:40:49] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [19-02-2024 21:40:49] ::1:50288 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/upsert HTTP/1.1" 200
+[32mINFO[0m:     [19-02-2024 21:40:50] ::1:50287 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/query HTTP/1.1" 200
+[32mINFO[0m:     [19-02-2024 21:55:29] ::1:54078 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [19-02-2024 21:55:30] ::1:54079 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/upsert HTTP/1.1" 200
+[32mINFO[0m:     [19-02-2024 21:55:30] ::1:54078 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/query HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 11:15:02] ::1:59673 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[31mERROR[0m:    [24-02-2024 11:17:48] Collection my_collection already exists
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/streams/memory.py", line 97, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/streams/memory.py", line 92, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 159, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/streams/memory.py", line 112, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 80, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 189, in __call__
+    with collapse_excgroups():
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/_utils.py", line 93, in collapse_excgroups
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 191, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 94, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 165, in call_next
+    raise app_exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/base.py", line 151, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/routing.py", line 758, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/routing.py", line 778, in app
+    await route.handle(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/routing.py", line 299, in handle
+    await self.app(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/routing.py", line 79, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/fastapi/routing.py", line 299, in app
+    raise e
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/fastapi/routing.py", line 294, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/fastapi/routing.py", line 193, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/starlette/concurrency.py", line 42, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/anyio/_backends/_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/auth/fastapi.py", line 234, in wrapped
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/server/fastapi/__init__.py", line 408, in create_collection
+    return self._api.create_collection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/api/segment.py", line 166, in create_collection
+    coll, created = self._sysdb.create_collection(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/telemetry/opentelemetry/__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/chromadb/db/mixins/sysdb.py", line 225, in create_collection
+    raise UniqueConstraintError(f"Collection {name} already exists")
+chromadb.db.base.UniqueConstraintError: Collection my_collection already exists
+[32mINFO[0m:     [24-02-2024 11:17:48] ::1:60380 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 500
+[32mINFO[0m:     [24-02-2024 11:21:52] ::1:61440 - "GET /api/v1/collections/my_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [24-02-2024 11:21:53] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [24-02-2024 11:21:53] ::1:61440 - "POST /api/v1/collections/cc6ce7c1-44fe-463f-89af-00dd3b5382cd/add HTTP/1.1" 201
+[32mINFO[0m:     [24-02-2024 11:21:53] ::1:61440 - "POST /api/v1/collections/cc6ce7c1-44fe-463f-89af-00dd3b5382cd/query HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 11:23:49] ::1:61938 - "GET /api/v1/collections/my_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[33mWARNING[0m:  [24-02-2024 11:23:50] Insert of existing embedding ID: id1
+[33mWARNING[0m:  [24-02-2024 11:23:50] Insert of existing embedding ID: id2
+[33mWARNING[0m:  [24-02-2024 11:23:50] Add of existing embedding ID: id1
+[33mWARNING[0m:  [24-02-2024 11:23:50] Add of existing embedding ID: id2
+[32mINFO[0m:     [24-02-2024 11:23:50] ::1:61938 - "POST /api/v1/collections/cc6ce7c1-44fe-463f-89af-00dd3b5382cd/add HTTP/1.1" 201
+[32mINFO[0m:     [24-02-2024 11:23:50] ::1:61938 - "POST /api/v1/collections/cc6ce7c1-44fe-463f-89af-00dd3b5382cd/query HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:19:59] ::1:50024 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:19:59] ::1:50025 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/upsert HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:47:09] ::1:56991 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:47:09] ::1:56991 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:47:09] ::1:56992 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:47:09] ::1:56992 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/query HTTP/1.1" 400
+[32mINFO[0m:     [24-02-2024 18:48:22] ::1:57301 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:48:22] ::1:57301 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:48:22] ::1:57302 - "GET /api/v1/collections/a-test-collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [24-02-2024 18:48:22] ::1:57302 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/query HTTP/1.1" 400
+[32mINFO[0m:     [25-02-2024 16:18:15] ::1:64693 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2024 16:18:15] ::1:64694 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/upsert HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2024 16:19:04] ::1:64917 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2024 16:19:04] ::1:64918 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/upsert HTTP/1.1" 200
+[32mINFO[0m:     [25-02-2024 16:19:05] ::1:64917 - "POST /api/v1/collections/16e7105d-e117-4fb0-9ad0-baa58d98a1ae/query HTTP/1.1" 200
+[32mINFO[0m:     [06-03-2024 17:08:15] Shutting down
+[32mINFO[0m:     [06-03-2024 17:08:16] Waiting for application shutdown.
+[32mINFO[0m:     [06-03-2024 17:08:16] Application shutdown complete.
+[32mINFO[0m:     [06-03-2024 17:08:16] Finished server process [[36m16692[0m]
