@@ -12,7 +12,9 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/index.js",
-            "args": ["What is this document about"]
+            "args": [
+                "What is this document about"
+            ]
         },
         {
             "type": "node",
@@ -22,7 +24,9 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/indexChroma.js",
-            "args": ["What is this document about"]
+            "args": [
+                "What is this document about"
+            ]
         },
         {
             "type": "node",
@@ -32,7 +36,9 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/indexPinecone.js",
-            "args": ["What is this document about"]
+            "args": [
+                "What is this document about"
+            ]
         },
         {
             "type": "node",
@@ -42,7 +48,21 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/indexPinecone2.js",
-            "args": ["What is this document about"]
+            "args": [
+                "What is this document about"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Pinecone3",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/indexPinecone3.js",
+            "args": [
+                "What is this document about"
+            ]
         }
     ]
 }

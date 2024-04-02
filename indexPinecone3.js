@@ -5,7 +5,7 @@ import { PineconeStore } from '@langchain/pinecone'
 
 import { formatDocumentsAsString } from 'langchain/util/document'
 import {
-    RunnablePassthrough,
+    // RunnablePassthrough,
     RunnableSequence
 } from '@langchain/core/runnables'
 import { StringOutputParser } from '@langchain/core/output_parsers'
@@ -35,7 +35,10 @@ export const run = async (params) => {
             // docRecordId: 'COA-00001'
         }
     })
-    const vectorStoreRetriever = vectorStore.asRetriever()
+    // const vectorStoreRetriever = vectorStore.asRetriever()
+    const results = await vectorStore.similaritySearch(question, 4)
+    const context = formatDocumentsAsString(results)
+    console.log('Context:', context)
     console.log('Creating retrieval chain...')
     // Create a system & human prompt for the chat model
     const SYSTEM_TEMPLATE = `Use the following pieces of context to answer the question at the end.
@@ -48,10 +51,11 @@ export const run = async (params) => {
     ]
     const prompt = ChatPromptTemplate.fromMessages(messages)
     const chain = RunnableSequence.from([
-        {
-            context: vectorStoreRetriever.pipe(formatDocumentsAsString),
-            question: new RunnablePassthrough()
-        },
+        // {
+        //     context: vectorStoreRetriever.pipe(formatDocumentsAsString),
+        //     context: new RunnablePassthrough(),
+        //     question: new RunnablePassthrough()
+        // },
         prompt,
         llm,
         new StringOutputParser()
@@ -68,10 +72,11 @@ export const run = async (params) => {
     // });
 
     console.log('Querying chain...')
-    const res = await chain.invoke(question)
+    const res = await chain.invoke({ context, question })
 
     // console.log('Response:', res.text || res.output_text)
     console.log('Response:', res)
 }
 
-run(process.argv.slice(2))
+// run(process.argv.slice(2))
+run(['Name some real-world applications of graphs'])
