@@ -4,7 +4,8 @@ import { PineconeStore } from '@langchain/pinecone'
 import { formatDocumentsAsString } from 'langchain/util/document'
 import { RunnableSequence } from '@langchain/core/runnables'
 import { StringOutputParser } from '@langchain/core/output_parsers'
-import { ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate } from '@langchain/core/prompts'
+// import { ChatPromptTemplate, HumanMessagePromptTemplate, SystemMessagePromptTemplate } from '@langchain/core/prompts'
+import { ChatPromptTemplate } from '@langchain/core/prompts'
 
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -36,10 +37,19 @@ export const run = async (params) => {
     ----------------
     {context}`
     const messages = [
-        SystemMessagePromptTemplate.fromTemplate(SYSTEM_TEMPLATE),
-        HumanMessagePromptTemplate.fromTemplate('{question}')
+        // SystemMessagePromptTemplate.fromTemplate(SYSTEM_TEMPLATE),
+        // HumanMessagePromptTemplate.fromTemplate('{question}')
+        ['system', SYSTEM_TEMPLATE],
+        // add history here, loop through question/answer pairs
+        ['human', 'Hey, I\'m Bob'],
+        ['ai', 'Hi Bob! How can I help you'],
+        // now add the question
+        ['human', '{question}']
     ]
     const prompt = ChatPromptTemplate.fromMessages(messages)
+    // invoke the prompt to debug the generated prompt
+    // const text = await prompt.invoke({ context, question })
+    // console.log('Prompt:', text)
     const chain = RunnableSequence.from([
         prompt,
         llm,
@@ -52,3 +62,4 @@ export const run = async (params) => {
 
 // run(process.argv.slice(2))
 run(['Name some real-world applications of graphs'])
+run(['What\'s my name?'])
