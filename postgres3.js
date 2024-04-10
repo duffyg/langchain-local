@@ -1,3 +1,4 @@
+// https://js.langchain.com/docs/integrations/toolkits/sql
 import { DataSource } from 'typeorm'
 import { SqlDatabase } from 'langchain/sql_db'
 import { OpenAI } from '@langchain/openai'

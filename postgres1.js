@@ -1,3 +1,4 @@
+// loads postgres with docRecords table from mongodb
 import { MongoClient } from 'mongodb'
 import pg from 'pg'
 

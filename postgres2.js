@@ -1,3 +1,4 @@
+// https://js.langchain.com/docs/expression_language/cookbook/sql_db
 import { DataSource } from 'typeorm'
 import { SqlDatabase } from 'langchain/sql_db'
 import { ChatOpenAI } from '@langchain/openai'
