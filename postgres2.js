@@ -21,6 +21,7 @@ const db = await SqlDatabase.fromDataSourceParams({
 const prompt =
   PromptTemplate.fromTemplate(`Based on the table schema below, write a SQL query that would answer the user's question:
 {schema}
+Restrict your answer to those rows with tenantId = "test" only
 
 Question: {question}
 SQL Query:`)
