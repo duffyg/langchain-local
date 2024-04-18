@@ -63,6 +63,36 @@
             "args": [
                 "What is this document about"
             ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "postgres2",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/postgres2.js",
+            "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "postgres4",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/postgres4.js",
+            "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "openai1",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/openai1.js",
+            "args": []
         }
     ]
 }

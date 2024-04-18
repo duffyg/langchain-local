@@ -13,7 +13,8 @@ const datasource = new DataSource({
 })
 
 const db = await SqlDatabase.fromDataSourceParams({
-    appDataSource: datasource
+    appDataSource: datasource,
+    includesTables: ['docrecords']
 })
 
 const model = new OpenAI({ modelName: process.env.OPENAI_API_MODEL, temperature: 0 })

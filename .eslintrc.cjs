@@ -9,6 +9,7 @@ module.exports = {
         sourceType: 'module'
     },
     rules: {
-        indent: ['error', 4]
+        indent: ['error', 4, { SwitchCase: 1 }],
+        'brace-style': ['error', 'stroustrup', { allowSingleLine: true }]
     }
 }

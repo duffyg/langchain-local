@@ -32,7 +32,8 @@ export const run = async (params) => {
             namespace: 'local',
             deleteAll: true
         })
-    } catch (err) {
+    }
+    catch (err) {
         console.error('Vector delete failed:', err)
     }
 

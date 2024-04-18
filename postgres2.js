@@ -15,8 +15,15 @@ const datasource = new DataSource({
 })
 
 const db = await SqlDatabase.fromDataSourceParams({
-    appDataSource: datasource
+    appDataSource: datasource,
+    includesTables: ['docrecords']
 })
+
+async function dbinfo () {
+    const schema = await db.getTableInfo()
+    console.log(schema)
+}
+dbinfo()
 
 const prompt =
   PromptTemplate.fromTemplate(`Based on the table schema below, write a SQL query that would answer the user's question:
