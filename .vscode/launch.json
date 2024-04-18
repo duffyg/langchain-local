@@ -93,6 +93,16 @@
             ],
             "program": "${workspaceFolder}/openai1.js",
             "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "openaiPinecone3",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/openaiPinecone3.js",
+            "args": []
         }
     ]
 }

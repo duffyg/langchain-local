@@ -62,4 +62,4 @@ export const run = async (params) => {
 
 // run(process.argv.slice(2))
 run(['Name some real-world applications of graphs'])
-run(['What\'s my name?'])
+// run(['What\'s my name?'])
