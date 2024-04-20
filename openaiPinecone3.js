@@ -26,7 +26,10 @@ const main = async (params) => {
     If you don't know the answer, just say that you don't know, don't try to make up an answer.
     ----------------
     ${context}`
-    const answer = await chat(openai, { systemMessage: prompt, userMessage: question })
+    const messages = []
+    messages.push({ role: 'system', content: prompt })
+    messages.push({ role: 'user', content: question })
+    const answer = await chat(openai, { messages })
     console.log(answer)
 }
 
