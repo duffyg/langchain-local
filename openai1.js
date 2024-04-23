@@ -1,7 +1,6 @@
 import { DataSource } from 'typeorm'
-import OpenAI from 'openai'
+import OpenAI from './openai.js'
 import SqlDatabase from './sqlDatabase.js'
-import { chat } from './utils.js'
 
 import * as dotenv from 'dotenv'
 dotenv.config()
@@ -29,8 +28,8 @@ async function main (question) {
   SQL Query:`
 
     let messages = [{ role: 'user', content: prompt }]
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-    const query = await chat(openai, messages, { stop: ['\nSQLResult:\n'] })
+    const openai = new OpenAI()
+    const query = await openai.chat(messages, { stop: ['\nSQLResult:\n'] })
     console.log(query)
     const response = await db.run(query)
     console.log(response)
@@ -45,7 +44,7 @@ async function main (question) {
   SQL Response: ${response}`
 
     messages = [{ role: 'user', content: prompt }]
-    const answer = await chat(openai, messages)
+    const answer = await openai.chat(messages)
     console.log(answer)
 }
 main('How many document records are there?')
