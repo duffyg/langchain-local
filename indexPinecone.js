@@ -11,7 +11,7 @@ dotenv.config()
 export const run = async (params) => {
     const pinecone = new Pinecone()
     const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX)
-    const namespace = process.env.PINECONE_NAMESPACE
+    const namespace = 'local'
     const embeddings = new OpenAIEmbeddings()
     const pineconeStore = new PineconeStore(embeddings, { pineconeIndex, namespace })
 
@@ -53,11 +53,11 @@ export const run = async (params) => {
     for (const doc of chunks) {
         // default metadata has loc.lines.from and loc.lines.to which we don't need
         // so overwrite with our own object
-        // doc.metadata.tenantId = process.env.PINECONE_NAMESPACE
+        // doc.metadata.tenantId = 'local'
         // doc.metadata.docTypeId = 'SOP'
         // doc.metadata.docRecordId = 'dsajs-book-v2.7.4'
         doc.metadata = {
-            // tenantId: process.env.PINECONE_NAMESPACE,
+            // tenantId,
             docTypeId: 'SOP',
             docRecordId: 'dsajs-book-v2.7.4'
         }

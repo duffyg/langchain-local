@@ -7,7 +7,8 @@ export default class Pinecone {
             apiKey: options.apiKey || process.env.PINECONE_API_KEY
         })
         this.index = this.client.index(options.index || process.env.PINECONE_INDEX)
-        this.ns = this.index.namespace(options.ns || process.env.PINECONE_NAMESPACE)
+        // the tenantId must be passed as the options namespace variable
+        this.ns = this.index.namespace(options.namespace)
         this.batchSize = 100
     }
 
@@ -30,7 +31,7 @@ export default class Pinecone {
     }
 
     async deleteMany (param) {
-        // can't delete by filter on Pinecone starter index
+        // can't delete by metadata filter on Pinecone starter index
         // possible when serverless but needs a paginated list call
         // workaround is to store IDs in mongodb after adding the docs/chunks
         // console.log('Deleting existing vectors from vector store...')

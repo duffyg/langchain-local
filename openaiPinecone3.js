@@ -8,7 +8,8 @@ const main = async (params) => {
     const question = params[0]
     console.log('Prompt:', question)
     console.log('Reading existing index...')
-    const pinecone = new Pinecone()
+    const namespace = 'local'
+    const pinecone = new Pinecone({ namespace })
     const openai = new OpenAI()
     const vector = await openai.embedQuery(question)
     // console.log(vector)

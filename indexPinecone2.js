@@ -13,7 +13,7 @@ export const run = async (params) => {
     console.log('Reading existing index...')
     const pinecone = new Pinecone()
     const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX)
-    const namespace = process.env.PINECONE_NAMESPACE
+    const namespace = 'local'
     const embeddings = new OpenAIEmbeddings()
     const llm = new OpenAI({ openAIApiKey: process.env.OPENAI_API_KEY, modelName: process.env.OPENAI_API_MODEL })
     const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
