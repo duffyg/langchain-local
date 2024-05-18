@@ -29,7 +29,7 @@ const main = async (params) => {
     const messages = []
     messages.push({ role: 'system', content: prompt })
     messages.push({ role: 'user', content: question })
-    const answer = await openai.chat({ messages })
+    const answer = await openai.chat(messages)
     console.log(answer)
 }
 
